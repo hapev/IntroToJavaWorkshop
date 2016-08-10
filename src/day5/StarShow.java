@@ -8,8 +8,8 @@ import org.jointheleague.graphical.robot.Robot;
 * 2. ask students how they might use the method to make the picture in the laminated hand-outs. */
 
 public class StarShow {
-	
-	Robot robot = new Robot("batman");
+	int i = 0;
+	Robot john = new Robot("batman");
 	
 	void makeStars() {
 		
@@ -46,14 +46,17 @@ public class StarShow {
 
 	private void drawStar(int starSize) {
 		// 2. Put the robot's pen down
-
+    john.penDown();
 		// 4. Repeat both commands 5 times. See Figure 1 at http://bit.ly/star-show
-
+    while (i>5){
 			// 1. Move the robot the distance of the starSize variable
-	
+	john.move(starSize);
 			// 3. Turn the robot 144 degrees
-			
-	}
+	john.turn(144);		
+    i++;
+    
+    }
+    }
 	
 	public static void main(String[] args) {
 		new StarShow().makeStars();
